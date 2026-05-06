@@ -692,7 +692,10 @@ function RegistrationForm(props) {
       console.warn('GoHighLevel webhook URL not configured. Set GHL_WEBHOOK_URL in index.html.');
     }
 
-    setSubmitted(true);
+    // Redirect to thank-you page after a brief delay so the fetch can fire
+    setTimeout(function() {
+      window.location.href = 'thank-you.html';
+    }, 300);
   }
 
   if (submitted) {
