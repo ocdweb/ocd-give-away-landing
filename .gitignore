@@ -8,4 +8,9 @@ Thumbs.db
 
 # Dev / source files (not for deployment)
 _dev/
-uploads/
+
+# Exclude heavy/internal upload files but keep the uploads folder
+uploads/*.pdf
+uploads/Requirements-*.png
+uploads/pasted-*.png
+uploads/screencapture-*.png
