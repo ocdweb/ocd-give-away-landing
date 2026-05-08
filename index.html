@@ -657,7 +657,7 @@ function RegistrationForm(props) {
     // ── GoHighLevel webhook ──────────────────────────────────────────────────
     // Replace GHL_WEBHOOK_URL with your actual GoHighLevel webhook endpoint.
     // In GHL: Automations → Create Workflow → Trigger: Webhook → copy the URL.
-    var GHL_WEBHOOK_URL = 'YOUR_GOHIGHLEVEL_WEBHOOK_URL_HERE';
+    var GHL_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/12454565/4yhejsp/';
 
     var payload = {
       firstName:  data.fname,
@@ -879,10 +879,7 @@ function InlineCTA(props) {
 function TopBar(props) {
   return h('div', {className: 'topbar'},
     h('div', {className: 'topbar-inner'},
-      h('div', {className: 'logo'},
-        h('div', {className: 'logo-mark'}, '1C'),
-        h('span', {className: 'logo-text'}, 'One Click Digital')
-      ),
+      h('div', null),
       h('button', {className: 'topbar-cta', onClick: props.scrollToForm}, 'Register Free')
     )
   );
