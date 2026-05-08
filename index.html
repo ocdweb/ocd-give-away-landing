@@ -252,12 +252,17 @@ input,select,textarea{font-family:inherit;}
 .vt-card:hover{box-shadow:0 8px 24px rgba(123,44,191,0.15);transform:translateY(-2px);}
 .vt-thumb{
   aspect-ratio:16/11;position:relative;overflow:hidden;
-  background:repeating-linear-gradient(45deg,#1c1c1c 0 12px,#181818 12px 24px);
+  background:#111;
   display:grid;place-items:center;
 }
+.vt-thumb img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform .35s ease;
+}
+.vt-card:hover .vt-thumb img{transform:scale(1.04);}
 .vt-thumb-overlay{
   position:absolute;inset:0;
-  background:radial-gradient(ellipse 65% 55% at 50% 40%,rgba(123,44,191,0.25),transparent 70%);
+  background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.1) 50%,transparent 100%);
 }
 .vt-play{
   position:relative;z-index:2;
@@ -1036,9 +1041,9 @@ function TextTestimonials(props) {
 
 // ── VIDEO TESTIMONIALS ──
 var VIDEOS = [
-  {initials:'PK', name:'Paul Kluwer', role:'CEO · Leak Detection Experts', url:'uploads/Leak-Detection-Testimonial-Video.mp4', type:'mp4'},
-  {initials:'MC', name:'Matt Curd', role:'Director · Concept Design Construct', url:'https://www.youtube.com/embed/Y7HwFq7M4kg?autoplay=1', type:'youtube'},
-  {initials:'AM', name:'Andrew Mantoufeh', role:'MD · Clover Homes', url:'https://www.youtube.com/embed/QNDYK09cPi0?autoplay=1', type:'youtube'}
+  {initials:'PK', name:'Paul Kluwer', role:'CEO · Leak Detection Experts', url:'uploads/Leak-Detection-Testimonial-Video.mp4', thumb:'uploads/thumb-paul-kluwer.jpg', type:'mp4'},
+  {initials:'MC', name:'Matt Curd', role:'Director · Concept Design Construct', url:'https://www.youtube.com/embed/Y7HwFq7M4kg?autoplay=1', thumb:'uploads/thumb-matt-curd.jpg', type:'youtube'},
+  {initials:'AM', name:'Andrew Mantoufeh', role:'MD · Clover Homes', url:'https://www.youtube.com/embed/QNDYK09cPi0?autoplay=1', thumb:'uploads/thumb-andrew-mantoufeh.jpg', type:'youtube'}
 ];
 
 function VideoTestimonials(props) {
@@ -1058,6 +1063,7 @@ function VideoTestimonials(props) {
                 : playing === i && v.type === 'youtube'
                   ? h('iframe', {style: {width: '100%', height: '100%', border: 0}, src: v.url, allow: 'autoplay;encrypted-media', allowFullScreen: true, title: v.name})
                   : h(F, null,
+                      v.thumb ? h('img', {src: v.thumb, alt: v.name + ' video thumbnail', loading: 'lazy'}) : null,
                       h('div', {className: 'vt-thumb-overlay'}),
                       h('button', {className: 'vt-play', 'aria-label': 'Play ' + v.name},
                         h('svg', {width: 18, height: 18, viewBox: '0 0 24 24', fill: 'currentColor'},
