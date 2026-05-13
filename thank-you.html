@@ -57,52 +57,52 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;}
 .logo-text{font-weight:800;font-size:15px;letter-spacing:0.04em;color:var(--black);text-transform:uppercase;}
 
 /* ── HERO ── */
-.hero{padding:48px 0 44px;text-align:center;border-bottom:1px solid var(--border);}
+.hero{padding:64px 0 60px;text-align:center;border-bottom:1px solid var(--border);}
 .confirmed-badge{
   display:inline-flex;align-items:center;gap:8px;
   background:var(--green-bg);border:1px solid var(--green-border);
-  border-radius:999px;padding:7px 18px;
-  font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
-  color:var(--green);margin-bottom:20px;
+  border-radius:999px;padding:9px 22px;
+  font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--green);margin-bottom:24px;
 }
 .confirmed-badge .tick{
-  width:18px;height:18px;border-radius:50%;background:var(--green);
-  display:grid;place-items:center;color:white;font-size:11px;font-weight:800;flex-shrink:0;
+  width:20px;height:20px;border-radius:50%;background:var(--green);
+  display:grid;place-items:center;color:white;font-size:12px;font-weight:800;flex-shrink:0;
 }
-.hero h1{font-size:clamp(1.7rem,3.5vw,2.5rem);font-weight:800;color:var(--black);max-width:22ch;margin:0 auto 14px;}
+.hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--black);max-width:22ch;margin:0 auto 18px;}
 .hero h1 em{font-style:normal;color:var(--purple);}
-.hero-sub{font-size:1rem;color:var(--grey);max-width:52ch;margin:0 auto 24px;line-height:1.7;}
+.hero-sub{font-size:1.1rem;color:var(--grey);max-width:52ch;margin:0 auto 28px;line-height:1.75;}
 .hero-sub strong{color:var(--black);}
 .prize-reminder{
-  display:inline-flex;align-items:center;gap:12px;
+  display:inline-flex;align-items:center;gap:16px;
   background:var(--purple-bg);border:1px solid var(--purple-border);
-  border-radius:12px;padding:14px 20px;
-  font-size:0.88rem;color:var(--purple);font-weight:600;
-  max-width:480px;margin:0 auto;
+  border-radius:14px;padding:18px 26px;
+  font-size:1rem;color:var(--purple);font-weight:600;
+  max-width:520px;margin:0 auto;
 }
-.prize-reminder-val{font-size:1.1rem;font-weight:800;color:var(--purple);}
-.prize-reminder-divider{width:1px;height:32px;background:var(--purple-border);}
+.prize-reminder-val{font-size:1.3rem;font-weight:800;color:var(--purple);}
+.prize-reminder-divider{width:1px;height:36px;background:var(--purple-border);}
 
 /* ── SECTIONS ── */
-.section{padding:56px 0;border-top:1px solid var(--border);}
-@media(max-width:600px){.section{padding:44px 0;}}
-.section-title{font-size:clamp(1.4rem,2.6vw,1.9rem);text-align:center;margin-bottom:10px;color:var(--black);}
-.section-sub{text-align:center;color:var(--grey);font-size:0.92rem;max-width:52ch;margin:0 auto;line-height:1.7;}
+.section{padding:88px 0;border-top:1px solid var(--border);}
+@media(max-width:600px){.section{padding:60px 0;}}
+.section-title{font-size:clamp(1.8rem,3.2vw,2.5rem);text-align:center;margin-bottom:14px;color:var(--black);}
+.section-sub{text-align:center;color:var(--grey);font-size:1rem;max-width:52ch;margin:0 auto;line-height:1.75;}
 
 /* ── CALENDAR ── */
 .calendar-section{background:var(--bg2);}
 .webinar-info{
   display:flex;justify-content:center;align-items:center;gap:24px;flex-wrap:wrap;
-  margin:20px 0 28px;font-size:0.88rem;color:var(--grey);
+  margin:24px 0 32px;font-size:1rem;color:var(--grey);
 }
 .webinar-info-item{display:flex;align-items:center;gap:6px;font-weight:500;}
 .webinar-info-item strong{color:var(--black);}
-.cal-buttons{display:flex;flex-direction:column;gap:10px;max-width:400px;margin:0 auto;}
+.cal-buttons{display:flex;flex-direction:column;gap:12px;max-width:440px;margin:0 auto;}
 .cal-btn{
-  display:flex;align-items:center;gap:12px;
-  padding:14px 20px;border-radius:10px;
+  display:flex;align-items:center;gap:14px;
+  padding:18px 24px;border-radius:12px;
   border:1.5px solid var(--border);background:white;
-  font-weight:600;font-size:0.92rem;color:var(--black);
+  font-weight:600;font-size:1rem;color:var(--black);
   transition:border-color .15s,box-shadow .15s,transform .1s;
   cursor:pointer;text-align:left;width:100%;
   font-family:'Poppins',sans-serif;
@@ -202,15 +202,7 @@ var ICAL_CONTENT     = 'BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//One Click Digita
 // ── TOPBAR ──
 function TopBar() {
   return h('div', {className: 'topbar'},
-    h('div', {className: 'topbar-inner'},
-      h('div', {className: 'logo'},
-        h('div', {className: 'logo-mark'}, '1C'),
-        h('span', {className: 'logo-text'}, 'One Click Digital')
-      ),
-      h('div', {style: {fontSize: '0.8rem', color: 'var(--light-grey)', fontWeight: 500}},
-        'SEO Giveaway & Webinar'
-      )
-    )
+    h('div', {className: 'topbar-inner'})
   );
 }
 
