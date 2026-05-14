@@ -918,8 +918,7 @@ function Hero(props) {
       h('div', {className: 'vsl-frame', onClick: function() { setVslPlaying(true); }},
         vslPlaying
           ? h('div', {className: 'vsl-playing'},
-              h('p', {style: {color: '#555', fontFamily: 'ui-monospace,monospace', fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase'}},
-                '[ YOUR VSL VIDEO GOES HERE ]')
+              h('video', {controls: true, autoPlay: true, onClick: function(e) { e.stopPropagation(); }, style: {width: '100%', height: '100%', objectFit: 'contain'}, src: 'uploads/OneClick%20VSL%20(SEO%20Giveaway).mp4'})
             )
           : h(F, null,
               h('div', {className: 'vsl-stripes'}),
@@ -931,7 +930,7 @@ function Hero(props) {
                   )
                 ),
                 h('p', {className: 'vsl-caption'}, 'Why construction companies are losing projects to worse competitors online — and how to fix it in 12 months.'),
-                h('p', {className: 'vsl-runtime'}, '3–5 min · One Click Digital')
+                h('p', {className: 'vsl-runtime'}, '2–3 min · One Click Digital')
               )
             )
       )

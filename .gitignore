@@ -14,3 +14,7 @@ uploads/*.pdf
 uploads/Requirements-*.png
 uploads/pasted-*.png
 uploads/screencapture-*.png
+
+# Large VSL videos — too big for GitHub (>100MB). Host on CDN for production.
+uploads/OneClick VSL (SEO Giveaway).mp4
+uploads/VSL (SEO Giveaway_Thank You Page).mp4
