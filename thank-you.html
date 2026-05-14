@@ -290,7 +290,7 @@ function VSLSection() {
       h('div', {className: 'vsl-frame', onClick: function() { setPlaying(true); }},
         playing
           ? h('div', {className: 'vsl-playing'},
-              h('video', {controls: true, autoPlay: true, muted: true, playsInline: true, onClick: function(e) { e.stopPropagation(); }, style: {width: '100%', height: '100%', objectFit: 'contain'}, src: 'uploads/VSL%20(SEO%20Giveaway_Thank%20You%20Page).mp4'})
+              h('iframe', {src: 'https://www.youtube.com/embed/cpFOTYXERYA?autoplay=1&mute=1&rel=0&modestbranding=1', style: {width: '100%', height: '100%', border: 0}, allow: 'autoplay; encrypted-media; fullscreen', allowFullScreen: true, title: 'One Click Digital SEO Giveaway - Thank You'})
             )
           : h(F, null,
               h('div', {className: 'vsl-stripes'}),
