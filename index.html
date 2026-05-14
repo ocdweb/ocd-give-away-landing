@@ -900,7 +900,7 @@ var HEADLINE = {
 };
 
 function Hero(props) {
-  var vslState = useState(false);
+  var vslState = useState(true);
   var vslPlaying = vslState[0], setVslPlaying = vslState[1];
 
   return h('section', {className: 'hero'},
@@ -918,7 +918,7 @@ function Hero(props) {
       h('div', {className: 'vsl-frame', onClick: function() { setVslPlaying(true); }},
         vslPlaying
           ? h('div', {className: 'vsl-playing'},
-              h('video', {controls: true, autoPlay: true, onClick: function(e) { e.stopPropagation(); }, style: {width: '100%', height: '100%', objectFit: 'contain'}, src: 'uploads/OneClick%20VSL%20(SEO%20Giveaway).mp4'})
+              h('video', {controls: true, autoPlay: true, muted: true, playsInline: true, onClick: function(e) { e.stopPropagation(); }, style: {width: '100%', height: '100%', objectFit: 'contain'}, src: 'uploads/OneClick%20VSL%20(SEO%20Giveaway).mp4'})
             )
           : h(F, null,
               h('div', {className: 'vsl-stripes'}),

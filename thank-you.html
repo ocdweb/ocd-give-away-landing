@@ -280,7 +280,7 @@ function CalendarSection() {
 
 // ── VSL ──
 function VSLSection() {
-  var s = useState(false);
+  var s = useState(true);
   var playing = s[0], setPlaying = s[1];
 
   return h('section', {className: 'section'},
@@ -290,7 +290,7 @@ function VSLSection() {
       h('div', {className: 'vsl-frame', onClick: function() { setPlaying(true); }},
         playing
           ? h('div', {className: 'vsl-playing'},
-              h('video', {controls: true, autoPlay: true, onClick: function(e) { e.stopPropagation(); }, style: {width: '100%', height: '100%', objectFit: 'contain'}, src: 'uploads/VSL%20(SEO%20Giveaway_Thank%20You%20Page).mp4'})
+              h('video', {controls: true, autoPlay: true, muted: true, playsInline: true, onClick: function(e) { e.stopPropagation(); }, style: {width: '100%', height: '100%', objectFit: 'contain'}, src: 'uploads/VSL%20(SEO%20Giveaway_Thank%20You%20Page).mp4'})
             )
           : h(F, null,
               h('div', {className: 'vsl-stripes'}),
