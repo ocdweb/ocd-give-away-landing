@@ -690,11 +690,11 @@ function RegistrationForm(props) {
     var redirect = function() { window.location.href = 'thank-you'; };
 
     if (GHL_WEBHOOK_URL !== 'YOUR_GOHIGHLEVEL_WEBHOOK_URL_HERE') {
-      // keepalive:true keeps the request alive even after page navigation
+      // Send as URLSearchParams (form-encoded) — avoids CORS preflight that
+      // kills the request on navigation. Zapier Catch Hook handles it fine.
       fetch(GHL_WEBHOOK_URL, {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(payload),
+        body: new URLSearchParams(payload),
         keepalive: true
       }).then(redirect).catch(redirect);
       // Safety fallback — redirect after 5s if fetch hangs
